@@ -1,0 +1,30 @@
+{
+    "drug_name": "Bortezomib",
+    "aliases": ["Velcade"],
+    "indications": ["Multiple Myeloma"],
+    "targets": [
+      {
+        "protein": "PSMB5",
+        "interaction_type": "inhibits"
+      }
+    ],
+    "interacts_with": [
+      {
+        "drug": "Dexamethasone",
+        "effect": "increased risk of peripheral neuropathy",
+        "evidence": "FDA label"
+      }
+    ],
+    "adverse_effects": [
+      {
+        "name": "Peripheral Neuropathy",
+        "source": "SIDER"
+      },
+      {
+        "name": "Herpes Zoster Reactivation",
+        "source": "FDA label"
+      }
+    ],
+    "mechanism_summary": "Reversibly inhibits the 26S proteasome, leading to apoptosis of myeloma cells"
+  }
+  

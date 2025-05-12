@@ -1,0 +1,30 @@
+{
+    "drug_name": "Lenalidomide",
+    "aliases": ["Revlimid"],
+    "indications": ["Multiple Myeloma"],
+    "targets": [
+      {
+        "protein": "IKZF1",
+        "interaction_type": "degrades"
+      }
+    ],
+    "interacts_with": [
+      {
+        "drug": "Dexamethasone",
+        "effect": "enhanced anti-myeloma activity",
+        "evidence": "FDA label"
+      }
+    ],
+    "adverse_effects": [
+      {
+        "name": "Neutropenia",
+        "source": "SIDER"
+      },
+      {
+        "name": "Thromboembolism",
+        "source": "FDA label"
+      }
+    ],
+    "mechanism_summary": "Promotes degradation of IKZF1/3 via cereblon-mediated ubiquitination"
+  }
+  

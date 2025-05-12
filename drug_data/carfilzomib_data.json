@@ -1,0 +1,35 @@
+{
+    "drug_name": "Carfilzomib",
+    "aliases": ["Kyprolis"],
+    "indications": ["Multiple Myeloma"],
+    "targets": [
+      {
+        "protein": "PSMB5",
+        "interaction_type": "inhibits"
+      }
+    ],
+    "interacts_with": [
+      {
+        "drug": "Dexamethasone",
+        "effect": "increased thromboembolism risk",
+        "evidence": "FDA label"
+      },
+      {
+        "drug": "Cyclophosphamide",
+        "effect": "bone marrow suppression",
+        "evidence": "clinical study"
+      }
+    ],
+    "adverse_effects": [
+      {
+        "name": "Peripheral Neuropathy",
+        "source": "SIDER"
+      },
+      {
+        "name": "Cardiac Toxicity",
+        "source": "FDA label"
+      }
+    ],
+    "mechanism_summary": "Inhibits the proteolytic activity of the 20S proteasome"
+  }
+  

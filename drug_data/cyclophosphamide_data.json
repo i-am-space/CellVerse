@@ -1,0 +1,30 @@
+{
+    "drug_name": "Cyclophosphamide",
+    "aliases": ["Cytoxan"],
+    "indications": ["Multiple Myeloma"],
+    "targets": [
+      {
+        "protein": "DNA",
+        "interaction_type": "alkylates"
+      }
+    ],
+    "interacts_with": [
+      {
+        "drug": "Carfilzomib",
+        "effect": "additive bone marrow toxicity",
+        "evidence": "clinical study"
+      }
+    ],
+    "adverse_effects": [
+      {
+        "name": "Hemorrhagic Cystitis",
+        "source": "FDA label"
+      },
+      {
+        "name": "Myelosuppression",
+        "source": "SIDER"
+      }
+    ],
+    "mechanism_summary": "Alkylates DNA, leading to cross-linking and inhibition of cell division"
+  }
+  
