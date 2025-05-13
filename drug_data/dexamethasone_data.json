@@ -1,35 +1,18 @@
 {
-    "drug_name": "Dexamethasone",
-    "aliases": ["Decadron"],
-    "indications": ["Multiple Myeloma"],
-    "targets": [
-      {
-        "protein": "NR3C1",
-        "interaction_type": "agonist"
-      }
-    ],
-    "interacts_with": [
-      {
-        "drug": "Carfilzomib",
-        "effect": "enhanced apoptosis in myeloma cells",
-        "evidence": "clinical trial"
-      },
-      {
-        "drug": "Lenalidomide",
-        "effect": "synergistic immune modulation",
-        "evidence": "FDA label"
-      }
-    ],
-    "adverse_effects": [
-      {
-        "name": "Hyperglycemia",
-        "source": "SIDER"
-      },
-      {
-        "name": "Insomnia",
-        "source": "FDA label"
-      }
-    ],
-    "mechanism_summary": "Activates glucocorticoid receptor to suppress inflammation and promote cell death"
-  }
-  
+  "drug_name": "Dexamethasone",
+  "aliases": [],
+  "indications": ["Multiple Myeloma", "Inflammatory Conditions"],
+  "targets": [
+    {"protein": "Glucocorticoid Receptor (NR3C1)", "interaction_type": "agonist"}
+  ],
+  "interacts_with": [
+    {"drug": "Carfilzomib", "effect": "increased thromboembolism risk", "evidence": "FDA label"},
+    {"drug": "Lenalidomide", "effect": "high thromboembolism risk", "evidence": "clinical study"}
+  ],
+  "adverse_effects": [
+    {"name": "Hyperglycemia", "source": "FDA label"},
+    {"name": "Fluid Retention", "source": "SIDER"},
+    {"name": "Mood Changes", "source": "clinical study"}
+  ],
+  "mechanism_summary": "Modulates inflammation by binding to the glucocorticoid receptor, altering gene expression"
+}

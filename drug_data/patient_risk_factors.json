@@ -1,0 +1,40 @@
+{
+"patient_risk_factors": [
+    {
+      "risk_factor": "Cardiac Toxicity",
+      "related_conditions": ["Cardiac", "Hypertension"],
+      "affected_drugs": ["Carfilzomib", "Dexamethasone", "Bortezomib"],
+      "explanation": "Patients with pre-existing cardiac conditions or hypertension have a higher risk of developing cardiac toxicity when treated with Carfilzomib, Dexamethasone, or Bortezomib."
+    },
+    {
+      "risk_factor": "Renal Dysfunction",
+      "related_conditions": ["Chronic Kidney Disease", "Nephrotoxic Drug Use"],
+      "affected_drugs": ["Carfilzomib", "Cyclophosphamide", "Lenalidomide"],
+      "explanation": "Patients with a history of kidney disease are at higher risk for renal dysfunction when using drugs like Carfilzomib, Cyclophosphamide, or Lenalidomide."
+    },
+    {
+      "risk_factor": "Bone Marrow Suppression",
+      "related_conditions": ["Prior Anemia", "Bone Marrow Suppression"],
+      "affected_drugs": ["Cyclophosphamide", "Carfilzomib", "Pomalidomide"],
+      "explanation": "Patients with a history of anemia or bone marrow disorders are more susceptible to severe myelosuppression with Cyclophosphamide, Carfilzomib, or Pomalidomide."
+    },
+    {
+      "risk_factor": "Peripheral Neuropathy",
+      "related_conditions": ["Neurological Symptoms", "Peripheral Nerve Damage"],
+      "affected_drugs": ["Bortezomib", "Pomalidomide"],
+      "explanation": "Patients with pre-existing neurological symptoms or peripheral nerve damage are at increased risk for developing or worsening neuropathy with Bortezomib or Pomalidomide."
+    },
+    {
+      "risk_factor": "Thromboembolism",
+      "related_conditions": ["Prior Thromboembolism", "Cardiac Disease", "Prolonged Immobilization"],
+      "affected_drugs": ["Lenalidomide", "Pomalidomide", "Dexamethasone"],
+      "explanation": "Patients with a history of thromboembolism, cardiac disease, or prolonged immobilization are at higher risk for thromboembolic events when using Lenalidomide, Pomalidomide, or Dexamethasone."
+    },
+    {
+      "risk_factor": "Infection Risk",
+      "related_conditions": ["Recurrent Infections", "Immune Deficiency"],
+      "affected_drugs": ["Daratumumab", "Lenalidomide"],
+      "explanation": "Patients with a history of recurrent infections or immune deficiency are at higher risk for severe infections when using Daratumumab or Lenalidomide."
+    }
+  ]
+}
