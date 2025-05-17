@@ -10,12 +10,12 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 # --- Load Graph Data ---
-edge_index = torch.load("gnn_data_edge_index.pt")
-edge_type = torch.load("gnn_data_edge_type.pt")
+edge_index = torch.load("gnn_data/edge_index.pt")
+edge_type = torch.load("gnn_data/edge_type.pt")
 
-with open("gnn_data_entity_map.json") as f:
+with open("gnn_data/entity_map.json") as f:
     entity_map = json.load(f)
-with open("gnn_data_relation_map.json") as f:
+with open("gnn_data/relation_map.json") as f:
     relation_map = json.load(f)
 
 num_nodes = len(entity_map)
@@ -97,4 +97,15 @@ for epoch in range(1, 101):
             print(f"Epoch {epoch:03d} | Loss: {loss.item():.4f} | Test Acc: {acc:.4f}")
 
 # Save model
-torch.save(model.state_dict(), "gnn_rgcn_model.pt")
+torch.save(model.state_dict(), "gnn_data/gnn_rgcn_model.pt")
+
+# Also save metadata about the model structure
+model_metadata = {
+    "num_adrs": len(adr_ids),
+    "adr_ids": adr_ids,
+    "num_nodes": num_nodes,
+    "num_relations": num_relations
+}
+import json
+with open("gnn_data/model_metadata.json", "w") as f:
+    json.dump(model_metadata, f)

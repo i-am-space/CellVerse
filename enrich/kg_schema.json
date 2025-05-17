@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "label": "Condition",
+      "properties": [
+        "name"
+      ]
+    },
+    {
+      "label": "CAUSES_ADR",
+      "properties": [
+        "source"
+      ]
+    },
+    {
+      "label": "ELEVATES_RISK_FOR",
+      "properties": [
+        "explanation"
+      ]
+    },
+    {
+      "label": "Disease",
+      "properties": [
+        "name"
+      ]
+    },
+    {
+      "label": "Drug",
+      "properties": [
+        "name",
+        "aliases"
+      ]
+    },
+    {
+      "label": "SideEffect",
+      "properties": [
+        "name"
+      ]
+    },
+    {
+      "label": "INDICATED_FOR",
+      "properties": []
+    },
+    {
+      "label": "INTERACTS_WITH",
+      "properties": [
+        "effect",
+        "evidence"
+      ]
+    },
+    {
+      "label": "TARGETS",
+      "properties": [
+        "interaction_type"
+      ]
+    },
+    {
+      "label": "Protein",
+      "properties": [
+        "name"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "INDICATED_FOR",
+      "source": "Drug",
+      "target": "Disease",
+      "properties": []
+    },
+    {
+      "type": "TARGETS",
+      "source": "Drug",
+      "target": "Protein",
+      "properties": [
+        "interaction_type"
+      ]
+    },
+    {
+      "type": "CAUSES_ADR",
+      "source": "Drug",
+      "target": "SideEffect",
+      "properties": [
+        "source"
+      ]
+    },
+    {
+      "type": "INTERACTS_WITH",
+      "source": "Drug",
+      "target": "Drug",
+      "properties": [
+        "evidence",
+        "effect"
+      ]
+    },
+    {
+      "type": "ELEVATES_RISK_FOR",
+      "source": "Condition",
+      "target": "SideEffect",
+      "properties": [
+        "explanation"
+      ]
+    }
+  ]
+}

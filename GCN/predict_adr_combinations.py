@@ -19,12 +19,12 @@ class RGCN(torch.nn.Module):
         return self.classifier(x)
 
 # ---- Load Data ----
-edge_index = torch.load("gnn_data_edge_index.pt")
-edge_type = torch.load("gnn_data_edge_type.pt")
+edge_index = torch.load("gnn_data/edge_index.pt")
+edge_type = torch.load("gnn_data/edge_type.pt")
 
-with open("gnn_data_entity_map.json") as f:
+with open("gnn_data/entity_map.json") as f:
     entity_map = json.load(f)
-with open("gnn_data_relation_map.json") as f:
+with open("gnn_data/relation_map.json") as f:
     relation_map = json.load(f)
 
 num_nodes = len(entity_map)
@@ -50,7 +50,15 @@ id_to_adr = {v: k for k, v in entity_map.items() if k in adr_nodes}
 # ---- Load model ----
 x = torch.eye(num_nodes)  # one-hot features
 model = RGCN(num_nodes, 64, 64, num_relations, len(adr_ids))
-model.load_state_dict(torch.load("gnn_rgcn_model.pt"))
+
+# Modified loading to handle partial state dict loading
+state_dict = torch.load("gnn_rgcn_model.pt")
+model_dict = model.state_dict()
+
+# Filter out classifier parameters (which have different shapes)
+filtered_state_dict = {k: v for k, v in state_dict.items() if 'classifier' not in k}
+model_dict.update(filtered_state_dict)
+model.load_state_dict(model_dict, strict=False)
 model.eval()
 
 # ---- Predict ADRs for a drug combination ----

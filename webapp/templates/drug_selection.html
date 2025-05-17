@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellVerse - {{ disease }} Drug Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .drug-item {
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .drug-item:hover {
+            background-color: #f8f9fa;
+        }
+        .drug-item.selected {
+            border-color: #0d6efd;
+            background-color: #e7f1ff;
+        }
+        .selected-drugs {
+            min-height: 100px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>{{ disease }} Drug Selection</h1>
+            <a href="{{ url_for('home') }}" class="btn btn-outline-secondary">Back to Home</a>
+        </div>
+
+        <!-- Flash Messages -->
+        {% if get_flashed_messages() %}
+        <div class="flash-messages">
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-primary">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Select drugs for the patient's treatment</h3>
+            </div>
+            <div class="card-body">
+                <p>Click on the drugs to add or remove them from your selection.</p>
+                
+                <h4>Available Drugs</h4>
+                <div class="row" id="available-drugs">
+                    {% for drug in drugs %}
+                    <div class="col-md-4">
+                        <div class="drug-item" onclick="toggleDrug(this, '{{ drug }}')">
+                            {{ drug }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <h4 class="mt-4">Selected Drugs</h4>
+                <div class="selected-drugs" id="selected-drugs-container">
+                    <em class="text-muted" id="no-selection-msg">No drugs selected</em>
+                </div>
+                
+                <form method="post" action="{{ url_for('analyze_combination') }}" id="analysis-form">
+                    <input type="hidden" name="disease" value="{{ disease }}">
+                    <div id="selected-drugs-inputs"></div>
+                    <button type="submit" class="btn btn-primary mt-4" id="analyze-btn" disabled>
+                        Analyze Combination
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const selectedDrugs = new Set();
+        
+        function toggleDrug(element, drug) {
+            if (selectedDrugs.has(drug)) {
+                selectedDrugs.delete(drug);
+                element.classList.remove('selected');
+            } else {
+                selectedDrugs.add(drug);
+                element.classList.add('selected');
+            }
+            updateSelectedDrugsDisplay();
+        }
+        
+        function updateSelectedDrugsDisplay() {
+            const container = document.getElementById('selected-drugs-container');
+            const noSelectionMsg = document.getElementById('no-selection-msg');
+            const analyzeBtn = document.getElementById('analyze-btn');
+            const inputsContainer = document.getElementById('selected-drugs-inputs');
+            
+            // Clear previous inputs
+            inputsContainer.innerHTML = '';
+            
+            if (selectedDrugs.size > 0) {
+                container.innerHTML = '';
+                
+                selectedDrugs.forEach(drug => {
+                    const pill = document.createElement('span');
+                    pill.className = 'badge bg-primary me-2 mb-2';
+                    pill.style.fontSize = '1em';
+                    pill.style.padding = '8px 12px';
+                    pill.innerHTML = `${drug} <span onclick="removeDrug('${drug}')" style="cursor:pointer">&times;</span>`;
+                    container.appendChild(pill);
+                    
+                    // Add hidden inputs for form submission
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'selected_drugs';
+                    input.value = drug;
+                    inputsContainer.appendChild(input);
+                });
+                
+                analyzeBtn.disabled = false;
+            } else {
+                container.innerHTML = '';
+                container.appendChild(noSelectionMsg);
+                analyzeBtn.disabled = true;
+            }
+        }
+        
+        function removeDrug(drug) {
+            selectedDrugs.delete(drug);
+            
+            // Unselect the corresponding drug item
+            const drugItems = document.querySelectorAll('.drug-item');
+            drugItems.forEach(item => {
+                if (item.textContent.trim() === drug) {
+                    item.classList.remove('selected');
+                }
+            });
+            
+            updateSelectedDrugsDisplay();
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

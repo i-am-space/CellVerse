@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellVerse - KG-Powered Drug Interaction Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .disease-btn {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        .jumbotron {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 0.3rem;
+            margin-bottom: 2rem;
+        }
+        .flash-messages {
+            margin-top: 20px;
+        }
+        .upload-card {
+            border: 2px dashed #0d6efd;
+            background-color: #f8f9ff;
+        }
+        .upload-card:hover {
+            background-color: #f0f4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">CellVerse</h1>
+            <p class="lead">Knowledge Graph-Powered Drug Interaction Analysis</p>
+            <hr class="my-4">
+            <p>Select a disease to analyze drug combinations and interactions, or upload a medical article to enrich the knowledge graph.</p>
+        </div>
+
+        <!-- Flash Messages -->
+        {% if get_flashed_messages() %}
+        <div class="flash-messages">
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-primary">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Disease Selection -->
+        <div class="text-center mb-5">
+            <h2>Select a Disease</h2>
+            <div class="mt-4">
+                {% for disease in diseases %}
+                <a href="{{ url_for('disease_page', disease=disease) }}" class="btn btn-primary disease-btn">{{ disease }}</a>
+                {% endfor %}
+            </div>
+            
+            {% if session.discovered_diseases %}
+            <div class="mt-4">
+                <form action="{{ url_for('reset_diseases') }}" method="post">
+                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                        <i class="bi bi-trash"></i> Reset Discovered Diseases
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Article Upload -->
+        <div class="card mt-5 upload-card">
+            <div class="card-header bg-primary text-white">
+                <h3>Enrich Knowledge Graph</h3>
+            </div>
+            <div class="card-body">
+                <p>Upload a medical article (PDF) to discover new diseases and treatments in our knowledge graph!</p>
+                <form method="post" action="{{ url_for('upload_article') }}" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="article" class="form-label">Select Medical Article (PDF)</label>
+                        <input class="form-control" type="file" id="article" name="article" accept=".pdf">
+                    </div>
+                    <button type="submit" class="btn btn-success">Upload & Enrich Knowledge Graph</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <small class="text-muted">
+                Note: Upload PDF files named "chronic_lymphotic_leukemia.pdf", "non_hodgkin_lymphoma.pdf", 
+                or "acute_myeloid_leukemia.pdf" to discover specific diseases.
+            </small>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
