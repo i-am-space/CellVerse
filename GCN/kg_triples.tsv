@@ -1,0 +1,72 @@
+Bortezomib	INTERACTS_WITH	Cyclophosphamide
+Bortezomib	INTERACTS_WITH	Cyclophosphamide
+Cyclophosphamide	INTERACTS_WITH	Carfilzomib
+Cyclophosphamide	INTERACTS_WITH	Carfilzomib
+Cyclophosphamide	INTERACTS_WITH	Carfilzomib
+Cyclophosphamide	INTERACTS_WITH	Carfilzomib
+Lenalidomide	INTERACTS_WITH	Dexamethasone
+Dexamethasone	INTERACTS_WITH	Lenalidomide
+Dexamethasone	INTERACTS_WITH	Carfilzomib
+Dexamethasone	INTERACTS_WITH	Lenalidomide
+Dexamethasone	INTERACTS_WITH	Carfilzomib
+Carfilzomib	INTERACTS_WITH	Cyclophosphamide
+Carfilzomib	INTERACTS_WITH	Dexamethasone
+Carfilzomib	INTERACTS_WITH	Dexamethasone
+Carfilzomib	INTERACTS_WITH	Cyclophosphamide
+Carfilzomib	INTERACTS_WITH	Dexamethasone
+Carfilzomib	INTERACTS_WITH	Dexamethasone
+Bortezomib	CAUSES_ADR	Peripheral Neuropathy
+Cyclophosphamide	CAUSES_ADR	Hemorrhagic Cystitis
+Cyclophosphamide	CAUSES_ADR	Myelosuppression
+Cyclophosphamide	CAUSES_ADR	Hemorrhagic Cystitis
+Cyclophosphamide	CAUSES_ADR	Myelosuppression
+Lenalidomide	CAUSES_ADR	Neutropenia
+Dexamethasone	CAUSES_ADR	Hyperglycemia
+Dexamethasone	CAUSES_ADR	Fluid Retention
+Dexamethasone	CAUSES_ADR	Mood Changes
+Dexamethasone	CAUSES_ADR	Hyperglycemia
+Dexamethasone	CAUSES_ADR	Fluid Retention
+Dexamethasone	CAUSES_ADR	Mood Changes
+Carfilzomib	CAUSES_ADR	Cardiac Toxicity
+Carfilzomib	CAUSES_ADR	Renal Dysfunction
+Carfilzomib	CAUSES_ADR	Peripheral Neuropathy
+Carfilzomib	CAUSES_ADR	Cardiac Toxicity
+Carfilzomib	CAUSES_ADR	Renal Dysfunction
+Carfilzomib	CAUSES_ADR	Peripheral Neuropathy
+Bortezomib	TARGETS	26S Proteasome
+Cyclophosphamide	TARGETS	DNA
+Cyclophosphamide	TARGETS	DNA
+Lenalidomide	TARGETS	Cereblon
+Dexamethasone	TARGETS	Glucocorticoid Receptor (NR3C1)
+Dexamethasone	TARGETS	Glucocorticoid Receptor (NR3C1)
+Carfilzomib	TARGETS	PSMB5
+Carfilzomib	TARGETS	PSMB8
+Carfilzomib	TARGETS	PSMB9
+Carfilzomib	TARGETS	PSMB5
+Carfilzomib	TARGETS	PSMB8
+Carfilzomib	TARGETS	PSMB9
+Bortezomib	INDICATED_FOR	Multiple Myeloma
+Cyclophosphamide	INDICATED_FOR	Lymphoma
+Cyclophosphamide	INDICATED_FOR	Multiple Myeloma
+Cyclophosphamide	INDICATED_FOR	Lymphoma
+Cyclophosphamide	INDICATED_FOR	Multiple Myeloma
+Lenalidomide	INDICATED_FOR	Multiple Myeloma
+Dexamethasone	INDICATED_FOR	Multiple Myeloma
+Dexamethasone	INDICATED_FOR	Inflammatory Conditions
+Dexamethasone	INDICATED_FOR	Multiple Myeloma
+Dexamethasone	INDICATED_FOR	Inflammatory Conditions
+Carfilzomib	INDICATED_FOR	Multiple Myeloma
+Carfilzomib	INDICATED_FOR	Multiple Myeloma
+Cardiac	ELEVATES_RISK_FOR	Cardiac Toxicity
+Hypertension	ELEVATES_RISK_FOR	Cardiac Toxicity
+Chronic Kidney Disease	ELEVATES_RISK_FOR	Renal Dysfunction
+Nephrotoxic Drug Use	ELEVATES_RISK_FOR	Renal Dysfunction
+Prior Anemia	ELEVATES_RISK_FOR	Bone Marrow Suppression
+Bone Marrow Suppression	ELEVATES_RISK_FOR	Bone Marrow Suppression
+Neurological Symptoms	ELEVATES_RISK_FOR	Peripheral Neuropathy
+Peripheral Nerve Damage	ELEVATES_RISK_FOR	Peripheral Neuropathy
+Prior Thromboembolism	ELEVATES_RISK_FOR	Thromboembolism
+Cardiac Disease	ELEVATES_RISK_FOR	Thromboembolism
+Prolonged Immobilization	ELEVATES_RISK_FOR	Thromboembolism
+Recurrent Infections	ELEVATES_RISK_FOR	Infection Risk
+Immune Deficiency	ELEVATES_RISK_FOR	Infection Risk
