@@ -1,6 +1,6 @@
 # MediMatch: A Graph-Based Clinical Safety Intelligence System
 
-> **Special Jury Engineering Award Winner @ CellVerse Docathon**
+> **Special Jury Engineering Award Winner @ CellVerse Docathon**<br>
 > Built in 3 days by a sleep-deprived second-year CS undergrad, selected from among 50+ teams of professionals (doctors + engineers)
 
 ---
