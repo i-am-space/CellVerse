@@ -37,7 +37,7 @@ MediMatch is built to address:
 | **Link Prediction (TransE)**           | Predicts potential drug-drug interactions not present in current KG                 |
 | **ADR Path Reasoning**                 | Uses Cypher queries to explain which ADRs are implicated in a drug combo            |
 | **Web App Interface**                  | Select disease, choose drugs, and get back risk + explanation in a user-friendly UI |
-| **KG Enrichment via PubMed (planned)** | Upload articles, convert to Cypher via LLM, expand the KG                           |
+| **KG Enrichment via PubMed** | Upload articles, convert to Cypher via LLM, expand the KG                           |
 
 ---
 
