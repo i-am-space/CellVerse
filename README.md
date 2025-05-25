@@ -46,7 +46,7 @@ MediMatch is built to address:
 ```
 .
 ├── drug_data/                # JSON definitions of core drugs and patient risk factors
-├── enrich/                   # PubMed KG enrichment via LLM (planned)
+├── enrich/                   # PubMed KG enrichment via LLM
 │   ├── text2cypher_enricher.py
 │   └── schema_builder.py
 ├── GCN/                      # Graph data processing and training
