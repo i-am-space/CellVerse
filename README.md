@@ -1,4 +1,4 @@
-# : A Graph-Based Clinical Safety Intelligence System
+# MediMatch: A Graph-Based Clinical Safety Intelligence System
 
 > **Special Jury Engineering Award Winner @ CellVerse Docathon**
 > Built in 3 days by a sleep-deprived second-year CS undergrad, selected from among 50+ teams of professionals (doctors + engineers)
@@ -7,7 +7,7 @@
 
 ## Overview
 
-GRAPH-MD is an intelligent, explainable, graph-based system that predicts the **risk and adverse outcomes of multi-drug combinations** in complex diseases, starting with **Multiple Myeloma**. By combining **Neo4j-powered knowledge graphs**, **GNN-based embedding models**, and **ML classifiers**, this project transforms drug safety from static, rule-based checklists into a dynamic, predictive decision support engine.
+MediMatch is an intelligent, explainable, graph-based system that predicts the **risk and adverse outcomes of multi-drug combinations** in complex diseases, starting with **Multiple Myeloma**. By combining **Neo4j-powered knowledge graphs**, **GNN-based embedding models**, and **ML classifiers**, this project transforms drug safety from static, rule-based checklists into a dynamic, predictive decision support engine.
 
 ---
 
@@ -19,7 +19,7 @@ Despite the wide availability of drug interaction checkers, most systems are:
 * Unable to handle complex combinations (3+ drugs)
 * Not contextualized to patient conditions or evolving biomedical knowledge
 
-GRAPH-MD is built to address:
+MediMatch is built to address:
 
 * Unseen or unreported adverse drug interactions
 * Multi-relational reasoning across drugs, ADRs, proteins, and conditions
